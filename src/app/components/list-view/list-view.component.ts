@@ -12,6 +12,10 @@ export class ListViewComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    console.log("forms builder");
+    console.log("log de masterss");
+    console.log("creado git stashsss");
+    
     this.buildForm();
   }
 
