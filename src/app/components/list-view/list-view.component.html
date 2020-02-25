@@ -1,0 +1,66 @@
+
+<div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">TODO LIST</div>
+        <input class="form-control" type="text" placeholder="Nuevo item" [(ngModel)] ="item">
+        <button class="btn btn-primary" (click)="addItem(item)">Agregar</button>
+        <ul class="list-group">
+            <li class="list-group-item list_group" *ngFor ="let item of list; let i = index;">
+                <input class="form-control"  type="text" placeholder="{{item}}"> <span><button class="btn btn-danger">borrar</button><button class="btn btn-secondary">Editar</button></span>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <form [formGroup]="formGroup">
+        <label for="registeredOn">Registered On</label>
+        <input name="registeredOn"
+              formControlName="registeredOn"
+              type="date" />
+              <br><br>
+        <label for="name">Name</label>
+        <input name="name"
+              formControlName="name"
+              type="text" />
+              <br><br>
+        <label for="email">E-mail</label>
+        <input name="email"
+              formControlName="email"
+              type="email"/>
+              <br><br><br>
+              <label for="email">ReeeeE-mail</label>
+              <input name="email"
+              formControlName="email_confirm"
+              type="email"/>
+<br><br><br>
+{{this.formGroup.controls['email'].hasError('required')}}
+<div *ngIf="!this.formGroup.controls['email'].hasError('required') || !this.formGroup.controls['email_confirm'].hasError('required')">
+  <span class="font400-12 text-danger">{{this.formGroup.controls['email'].invalid || this.formGroup.controls['email_confirm'].invalid ? "Formato de email no válido." : (this.formGroup.hasError('MatchEmail') ? "No coinciden los correos." : "")}}.</span>
+</div>
+
+
+                <!-- <div *ngIf="this.formGroup.controls['email'].hasError('minlength')">
+                  <span class="font400-12 text-dark-light2">Confirmación de correo electrónico</span>
+                  <span class="font400-12 text-danger" *ngIf="this.formGroup.hasError('MatchEmail')">No coinciden los correos.</span>
+                </div> -->
+                
+
+                <!-- <span class="font400-12 text-danger" *ngIf="this.formGroup.controls['email'].hasError('minlength')">Minimo de caracteres</span> -->
+
+
+
+       
+             
+<br><br><br>
+
+
+        <label for="password">Password</label>
+        <input name="password"
+              formControlName="password"
+              type="password" />
+        <input type="submit">
+      </form>
+    </div>
+  </div>
