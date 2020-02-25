@@ -39,20 +39,11 @@
 <div *ngIf="!this.formGroup.controls['email'].hasError('required') || !this.formGroup.controls['email_confirm'].hasError('required')">
   <span class="font400-12 text-danger">{{this.formGroup.controls['email'].invalid || this.formGroup.controls['email_confirm'].invalid ? "Formato de email no válido." : (this.formGroup.hasError('MatchEmail') ? "No coinciden los correos." : "")}}.</span>
 </div>
-
-
                 <!-- <div *ngIf="this.formGroup.controls['email'].hasError('minlength')">
                   <span class="font400-12 text-dark-light2">Confirmación de correo electrónico</span>
                   <span class="font400-12 text-danger" *ngIf="this.formGroup.hasError('MatchEmail')">No coinciden los correos.</span>
                 </div> -->
-                
-
-                <!-- <span class="font400-12 text-danger" *ngIf="this.formGroup.controls['email'].hasError('minlength')">Minimo de caracteres</span> -->
-
-
-
-       
-             
+                <!-- <span class="font400-12 text-danger" *ngIf="this.formGroup.controls['email'].hasError('minlength')">Minimo de caracteres</span> -->    
 <br><br><br>
 
 
